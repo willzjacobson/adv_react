@@ -13,7 +13,9 @@
     "verify-tests": "jest --coverage",
     "build-webpack": "webpack -p",
     "build-node": "babel lib -d build --copy-files",
-    "start-prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name appProd"
+    "start-prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name appProd",
+    "start-prod-docker": "NODE_ENV=production NODE_PATH=./build pm2-docker build/server.js",
+    "start-dev-docker": "NODE_ENV=development NODE_PATH=./build pm2-docker build/server.js"
   },
   "babel": {
     "presets": [
@@ -38,7 +40,6 @@
     "eslint": "^4.12.1",
     "eslint-plugin-react": "^7.5.1",
     "jest": "^21.2.1",
-    "react-addons-perf": "^15.4.2",
     "react-test-renderer": "^16.2.0"
   },
   "dependencies": {
